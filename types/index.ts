@@ -23,6 +23,8 @@ export interface Project {
   tools?: string[];
   heroImage: string;
   figmaLink?: string;
+  liveLink?: string;
+  codeLink?: string;
 }
 
 export interface Review {

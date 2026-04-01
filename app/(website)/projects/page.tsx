@@ -25,7 +25,7 @@ export default async function ProjectsPage() {
       <Navbar />
       
       <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-20">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 font-heading">
@@ -37,9 +37,9 @@ export default async function ProjectsPage() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-10 mb-12">
             {projectsWithId.map((project, index) => (
-              <ProjectCard key={project._id} {...project} index={index} />
+              <ProjectCard key={project._id} {...project} index={index} large />
             ))}
           </div>
 

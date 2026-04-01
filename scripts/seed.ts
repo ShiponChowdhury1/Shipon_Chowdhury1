@@ -50,9 +50,7 @@ async function seedDatabase() {
 
     console.log('🎉 Database seeded successfully!');
     console.log('\n📋 Admin Login Credentials:');
-    console.log('1. ahikahsan@gmail.com / Rahik@12345 (Admin)');
-    console.log('2. admin@example.com / Admin@123 (Admin)');
-    console.log('3. manager@example.com / Manager@123 (Manager)');
+    console.log('1. oxshipon1@gmail.com / Shipon7878 (Admin)');
 
     process.exit(0);
   } catch (error) {

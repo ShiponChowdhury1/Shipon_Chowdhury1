@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Layers, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Calendar, Layers, ExternalLink, Code2 } from 'lucide-react';
 import Navbar from '@/app/components/Navbar';
 import Footer from '@/app/components/Footer';
 import dbConnect from '@/lib/mongodb';
@@ -67,6 +67,9 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
   if (!project) {
     notFound();
   }
+
+  const liveLink = project.liveLink || project.figmaLink;
+  const codeLink = project.codeLink;
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0D101D]">
@@ -211,15 +214,27 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                   </>
                 )}
                 
-                {project.figmaLink && (
+                {liveLink && (
                   <a
-                    href={project.figmaLink}
+                    href={liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-[#7C4DFF] text-white rounded-lg hover:bg-[#7C4DFF]/90 transition-colors w-full justify-center font-body"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    View in Figma
+                    View Live Project
+                  </a>
+                )}
+
+                {codeLink && (
+                  <a
+                    href={codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 px-4 py-2 border border-[#2D3554] text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-[#1A1F35] transition-colors w-full justify-center font-body"
+                  >
+                    <Code2 className="w-4 h-4" />
+                    View Source Code
                   </a>
                 )}
               </div>

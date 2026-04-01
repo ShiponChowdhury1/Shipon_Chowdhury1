@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: "Shipon Chowdhury - Frontend Developer",
   description: "Shipon Chowdhury, a skilled Frontend Developer creating fast, responsive, and user-friendly web applications.",
   icons: {
-    icon: "/profile/shipon.svg",
+    icon: "/profile/shipon .svg",
   },
 };
 

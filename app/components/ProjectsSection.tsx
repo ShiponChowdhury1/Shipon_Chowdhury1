@@ -9,6 +9,7 @@ import { Project } from '../../types';
 interface ProjectCardProps extends Project {
   _id?: string;
   index?: number;
+  large?: boolean;
 }
 
 export function ProjectCard({
@@ -19,6 +20,7 @@ export function ProjectCard({
   heroImage,
   slug,
   index = 0,
+  large = false,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -35,11 +37,13 @@ export function ProjectCard({
         scale: 1.02,
         transition: { duration: 0.3, ease: "easeOut" }
       }}
-      className="group bg-white dark:bg-[#15192D] border border-gray-200 dark:border-[#2D3554] rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 w-full max-w-[366.67px] h-full min-h-[200px] p-4 flex flex-col"
+      className={`group bg-white dark:bg-[#15192D] border border-gray-200 dark:border-[#2D3554] rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 w-full h-full min-h-[200px] flex flex-col ${
+        large ? 'max-w-none p-5' : 'max-w-[366.67px] p-4'
+      }`}
     >
       {/* Thumbnail */}
       <motion.div 
-        className="relative h-48 overflow-hidden bg-muted rounded-xl"
+        className={`relative overflow-hidden bg-muted rounded-xl ${large ? 'h-72 lg:h-80' : 'h-48'}`}
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.4 }}
       >
@@ -47,20 +51,20 @@ export function ProjectCard({
           src={heroImage}
           alt={title}
           fill
-          className="object-cover"
+          className={`object-cover transition-all ease-linear ${large ? 'object-top duration-2000 group-hover:object-bottom' : 'duration-500'}`}
         />
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
         />
       </motion.div>
 
       {/* Content */}
-      <div className="flex-1 py-6 space-y-4 flex flex-col">
+      <div className={`flex-1 space-y-4 flex flex-col ${large ? 'py-7' : 'py-6'}`}>
         <div className="flex-1">
           <motion.h3 
-            className="text-xl font-semibold text-card-foreground group-hover:text-primary transition-colors font-heading"
+            className={`font-semibold text-card-foreground group-hover:text-primary transition-colors font-heading ${large ? 'text-2xl' : 'text-xl'}`}
             whileHover={{ x: 5 }}
             transition={{ duration: 0.2 }}
           >
@@ -78,7 +82,7 @@ export function ProjectCard({
             </motion.p>
           )}
           <motion.p 
-            className="text-muted-foreground text-sm mt-2 line-clamp-2 font-body"
+            className={`text-muted-foreground mt-2 font-body ${large ? 'text-base line-clamp-3' : 'text-sm line-clamp-2'}`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

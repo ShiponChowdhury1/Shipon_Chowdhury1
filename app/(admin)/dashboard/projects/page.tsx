@@ -195,14 +195,14 @@ export default function ProjectsManagerPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-neutral-900 mb-2">GitHub URL</label>
+                      <label className="block text-sm font-medium text-neutral-900 mb-2">GitLab URL</label>
                       <input
                         type="url"
                         name="githubUrl"
                         value={formData.githubUrl}
                         onChange={handleChange}
                         className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                        placeholder="https://github.com/..."
+                        placeholder="https://gitlab.com/..."
                       />
                     </div>
                   </div>

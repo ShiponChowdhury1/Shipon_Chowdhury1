@@ -39,14 +39,14 @@ export default function AdminSidebar() {
         <div className="p-4 lg:p-6 border-b border-gray-200 dark:border-neutral-800 flex flex-col items-center overflow-y-auto">
           <div className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-4 border-[#7C4DFF] mb-4">
             <Image
-              src="/profile/ahsan.svg"
-              alt="Rahik Admin"
+              src="/profile/shipon.png"
+              alt="Shipon Chowdhury"
               fill
               className="object-cover"
             />
           </div>
-          <h2 className="text-lg lg:text-xl font-bold font-heading text-center text-gray-900 dark:text-white">Rahik Admin</h2>
-          <p className="text-gray-600 dark:text-neutral-400 text-xs lg:text-sm mt-1 text-center font-body">UX/UI Designer</p>
+          <h2 className="text-lg lg:text-xl font-bold font-heading text-center text-gray-900 dark:text-white">Shipon Chowdhury</h2>
+          <p className="text-gray-600 dark:text-neutral-400 text-xs lg:text-sm mt-1 text-center font-body">Frontend developer</p>
           
           {/* Go Back Button */}
           <Link

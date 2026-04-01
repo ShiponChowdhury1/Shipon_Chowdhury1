@@ -13,7 +13,9 @@ const ProjectSchema = new mongoose.Schema({
   timeline: { type: String },
   tools: [{ type: String }],
   heroImage: { type: String, required: true },
-  figmaLink: { type: String }
+  figmaLink: { type: String },
+  liveLink: { type: String },
+  codeLink: { type: String }
 }, {
   timestamps: true
 });

@@ -1,87 +1,136 @@
 import { Project } from '../types';
 import { Smartphone, Globe, LayoutDashboard, Search, Layers, Target } from 'lucide-react';
 import { Code, Lightbulb, Sparkles } from 'lucide-react';
+
 export const projects: Project[] = [
+
+
   {
-    "title": "AI Medical App",
-    "slug": "ai-medical-app",
-    "secondTitle": "Mobile App Design",
+    "title": "ClipForge - AI Video Generation SaaS",
+    "slug": "clipforge-ai-video-generation-saas",
+    "secondTitle": "AI Video SaaS Dashboard",
     "services": [
-      "Mobile App Design",
-      "Web App Design",
-      "Website Design",
-      "Dashboard Design"
+      "Dashboard Development",
+      "Frontend Development",
+      "API Integration",
+      "Performance Optimization"
     ],
-    "shortDescription": "A modern AI-powered medical app designed for seamless healthcare experiences across mobile and web platforms.",
-    "category": "Healthcare / AI",
-    "heroImage": "https://res.cloudinary.com/dtojrlekw/image/upload/v1765605943/Med_elbprn.png",
-    "figmaLink": "https://www.figma.com/design/94KocbpjkXh5tkKszFdxdU/Medical?node-id=12-31&t=5YqeG6ZgdVef9HUQ-1"
+    "shortDescription": "Built an AI-powered video generation platform with customizable output, real-time workflow tracking, authentication, and billing features.",
+    "longDescription": "ClipForge is an AI-based video generation SaaS where users can generate faceless short-form videos with style, voice, and subtitle customization. I built a multi-step workflow with real-time progress updates, implemented secure authentication (email login, OTP, Google OAuth), integrated subscription billing with credit usage, and created an admin panel to manage users, subscriptions, and analytics.",
+    "category": "AI / SaaS",
+    "tools": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "RTK Query"
+    ],
+    "tags": [
+      "AI Video Generation",
+      "Authentication",
+      "Billing",
+      "Admin Panel"
+    ],
+    "heroImage": "https://res.cloudinary.com/dau8sazoh/image/upload/v1775019448/Clipforge-Create-Faceless-Short-Form-Videos-with-AI-04-01-2026_10_57_AM_wplcfs.png",
+    "liveLink": "https://clip-forge-ai-video-generate.onrender.com/dashboard",
+    "codeLink": "https://github.com/ShiponChowdhury1/Clip-Forge-ai-video-generate.git"
   },
+
   {
-    "title": "Restaurant Management ",
-    "slug": "Mobile App design & Web App",
-    "secondTitle": "Web APP Design",
+    "title": "AdInsight - AI Content Curation Platform",
+    "slug": "adinsight-ai-content-curation-platform",
+    "secondTitle": "Content Intelligence Dashboard",
     "services": [
-      "Mobile App Design",
-      "Web App Design"
+      "Frontend Development",
+      "Dashboard Development",
+      "API Integration",
+      "UI Implementation"
     ],
-    "shortDescription": "Create stunning AI-generated videos effortlessly with a fast, clean, and modern workflow.",
-    "category": "Automotive / AI",
-    "heroImage": "https://res.cloudinary.com/dtojrlekw/image/upload/v1765604840/food_fjvltj.png",
-    "figmaLink": "https://www.figma.com/design/saeDS0V0C5mzroPE0dDEOI/Restaurant-Management?node-id=1-7556&t=h7NjY5XEgXfjH8hP-1"
+    "shortDescription": "An AI content curation platform for ad-tech users with role-based dashboards, search workflows, and analytics.",
+    "longDescription": "AdInsight is a content platform for ad-tech users with dedicated User and Admin dashboards. I implemented authentication with JWT, OTP, Google OAuth, and LinkedIn OAuth, developed search/filter/bookmark/reading history features, and built admin tools for managing content, users, and analytics.",
+    "category": "AdTech / AI",
+    "tools": [
+      "Next.js",
+      "TypeScript",
+      "Redux",
+      "REST APIs"
+    ],
+    "tags": [
+      "JWT",
+      "OTP",
+      "Google OAuth",
+      "LinkedIn OAuth",
+      "Admin Dashboard"
+    ],
+    "heroImage": "https://res.cloudinary.com/dau8sazoh/image/upload/v1775019295/TrendWatch-Accelerate-your-Advertising-process-04-01-2026_10_54_AM_qgg887.png",
+    "liveLink": "https://trendwatch.info/",
+    "codeLink": "https://github.com/ShiponChowdhury1/impact-lab-ai-content-curation-platform.git"
   },
+
   {
-    "title": "Ai Video Generation Platform",
-    "slug": "Dashboard web App Design",
-    "secondTitle": "Dashboard Design",
+    "title": "Bike Rental - Web App",
+    "slug": "bike-rental-web-app",
+    "secondTitle": "Role-Based Rental Platform",
     "services": [
-      "Dashboard Design",
-      "Web App Design"
+      "Frontend Development",
+      "Dashboard Development",
+      "API Integration",
+      "Responsive Web Design"
     ],
-    "shortDescription": "A peaceful space to reset your mind, reduce stress, and giving you the break you need to move forward.",
-    "category": "Ecommerce / SaaS",
-    "heroImage": "https://res.cloudinary.com/dau8sazoh/image/upload/v1765521566/Dashboard_1_ryuind.png",
-    "figmaLink": "https://www.figma.com/design/kuqkecL6tQCcS87SHqFvzY/Clip-forge?node-id=22-1650&t=UDZdMAF1cubViKVE-0"
+    "shortDescription": "A role-based bike rental web app with secure authentication, admin management, and a smooth responsive experience.",
+    "longDescription": "Built a role-based bike rental platform with JWT and Firebase authentication. Developed an admin dashboard to manage bikes and bookings. Integrated Redux Persist, React Hook Form, Framer Motion, and Lottie for smooth UX. Designed a fully responsive UI with Tailwind CSS and improved performance with reusable components.",
+    "category": "Transport / SaaS",
+    "tools": [
+      "React",
+      "Redux",
+      "Firebase",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "tags": [
+      "JWT",
+      "Role-Based Access",
+      "Admin Dashboard",
+      "Redux Persist",
+      "Framer Motion"
+    ],
+    "heroImage": "https://res.cloudinary.com/dau8sazoh/image/upload/v1775023532/RIDEXO-04-01-2026_12_05_PM_q2gvhk.png",
+    "liveLink": "https://bike-rental-client.vercel.app/",
+    "codeLink": "https://github.com/ShiponChowdhury1/bike-rental-client"
   },
+
   {
-    "title": "Reality Reset & Mindfulness",
-    "slug": "App web App Design",
-    "secondTitle": "Website Design",
+    "title": "PAWSAGE - Pet Tips & Stories Platform",
+    "slug": "pawsage-pet-tips-stories-platform",
+    "secondTitle": "Social Content Platform",
     "services": [
-      "Mobile App Design",
-      "Web App Design"
+      "Frontend Development",
+      "API Integration",
+      "UI Implementation",
+      "Responsive Web Design"
     ],
-    "shortDescription": "A comprehensive operations dashboard for airline crew scheduling, live flight monitoring, and disruption control.",
-    "category": "Enterprise / Aviation",
-    "heroImage": "https://res.cloudinary.com/dtojrlekw/image/upload/v1765605189/Reset_rzimsb.png",
-    "figmaLink": "https://www.figma.com/design/qLeJ59hc2yg2y3QhumtpqT/Reset?node-id=3-3&t=U4XohpkwfXphv8dj-1"
+    "shortDescription": "A social-media-style pet platform with role-based access, premium content, and interactive community features.",
+    "longDescription": "Developed a social-media-like platform with role-based Admin/User access. Implemented premium content with payment integration and added social features like like, comment, share, and follow with real-time updates. Designed dark mode, animations, and skeleton loaders for better UX. Used TanStack Query for optimized API calls and client-side caching, and built dynamic post creation with search and filters.",
+    "category": "Social Platform / PetTech",
+    "tools": [
+      "Next.js",
+      "TypeScript",
+      "TanStack Query",
+      "Firebase"
+    ],
+    "tags": [
+      "Role-Based Access",
+      "Payment Integration",
+      "Real-Time Updates",
+      "Dark Mode",
+      "Skeleton Loaders"
+    ],
+    "heroImage": "https://res.cloudinary.com/dau8sazoh/image/upload/v1775024457/Mait-Club-Admin-Dashboard-04-01-2026_12_20_PM_vu3b8u.png",
+    "liveLink": "https://dashboard.maitclub.com",
+    "codeLink": "https://github.com/ShiponChowdhury1/Ai-Powered-Sports-Coaching-Dashboard-app.git"
   },
-  {
-    "title": "Movie Website Design",
-    "slug": "Web App Design",
-    "secondTitle": "Mobile App Design",
-    "services": [
-      "Website Design",
-      "Web App Design"
-    ],
-    "shortDescription": "A VR-based telemedicine system enabling doctors to diagnose remotely using immersive XR environments.",
-    "category": "Healthcare / XR UI",
-    "heroImage": "https://res.cloudinary.com/dtojrlekw/image/upload/v1765605916/Apple_iMac_21.5__2019_shm8gn.jpg",
-    "figmaLink": "https://www.figma.com/design/eKkJLo42Wh6zcetTqeBF5l/StreamLab-Web-App?node-id=4-4&t=VQuHJ7x85jjLjx8v-1"
-  },
-  {
-    "title": "Astrology Ai Finance",
-    "slug": "Dashboard web-app-design",
-    "secondTitle": "Dashboard Design",
-    "services": [
-      "Dashboard Design",
-      "Web App Design"
-    ],
-    "shortDescription": "A next-generation finance dashboard designed with predictive AI insights, smart budgeting, and automated risk analytics.",
-    "category": "Dashboard UI / SaaS",
-    "heroImage": "https://res.cloudinary.com/dtojrlekw/image/upload/v1765604735/astro_oxtjjl.png",
-    "figmaLink": "https://www.figma.com/design/6RifqEgiITW0WFYEDLHXjV/Astrology-App?node-id=1-2&t=5EnoQJgrpGA5kzBw-1"
-  }
+
+
 
 ]
 

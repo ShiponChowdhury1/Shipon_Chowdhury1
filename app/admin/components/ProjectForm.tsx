@@ -22,7 +22,8 @@ export default function ProjectForm({ project, isEditing = false }: ProjectFormP
     shortDescription: '',
     category: '',
     heroImage: '',
-    figmaLink: ''
+    liveLink: '',
+    codeLink: ''
   });
 
   useEffect(() => {
@@ -157,7 +158,7 @@ export default function ProjectForm({ project, isEditing = false }: ProjectFormP
                   value={formData.secondTitle || ''}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-[#2D3554] rounded-lg bg-gray-50 dark:bg-[#0D101D] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#7C4DFF] focus:border-transparent"
-                  placeholder="e.g., UI/UX Design"
+                  placeholder="e.g., Frontend Web App"
                 />
               </div>
 
@@ -172,7 +173,7 @@ export default function ProjectForm({ project, isEditing = false }: ProjectFormP
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-[#2D3554] rounded-lg bg-gray-50 dark:bg-[#0D101D] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#7C4DFF] focus:border-transparent"
-                  placeholder="e.g., Education / AI"
+                  placeholder="e.g., SaaS / Frontend"
                 />
               </div>
 
@@ -193,15 +194,29 @@ export default function ProjectForm({ project, isEditing = false }: ProjectFormP
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Figma Link
+                  Live Project Link
                 </label>
                 <input
                   type="text"
-                  name="figmaLink"
-                  value={formData.figmaLink || ''}
+                  name="liveLink"
+                  value={formData.liveLink || formData.figmaLink || ''}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-[#2D3554] rounded-lg bg-gray-50 dark:bg-[#0D101D] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#7C4DFF] focus:border-transparent"
-                  placeholder="https://www.figma.com/design/..."
+                  placeholder="https://your-live-site.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Source Code Link
+                </label>
+                <input
+                  type="text"
+                  name="codeLink"
+                  value={formData.codeLink || ''}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-[#2D3554] rounded-lg bg-gray-50 dark:bg-[#0D101D] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#7C4DFF] focus:border-transparent"
+                  placeholder="https://gitlab.com/username/repo"
                 />
               </div>
             </div>
@@ -211,7 +226,7 @@ export default function ProjectForm({ project, isEditing = false }: ProjectFormP
                 Services *
               </label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {['Mobile App Design', 'Web App Design', 'Website Design', 'Dashboard Design'].map((service) => (
+                {['Frontend Development', 'Responsive Web Design', 'Performance Optimization', 'API Integration', 'Dashboard Development', 'UI Implementation'].map((service) => (
                   <label
                     key={service}
                     className="flex items-center gap-3 p-3 border border-gray-300 dark:border-[#2D3554] rounded-lg bg-gray-50 dark:bg-[#0D101D] cursor-pointer hover:bg-gray-100 dark:hover:bg-[#1A1F35] transition-colors"
@@ -247,7 +262,7 @@ export default function ProjectForm({ project, isEditing = false }: ProjectFormP
                 required
                 rows={3}
                 className="w-full px-4 py-3 border border-gray-300 dark:border-[#2D3554] rounded-lg bg-gray-50 dark:bg-[#0D101D] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#7C4DFF] focus:border-transparent"
-                placeholder="Brief project summary"
+                placeholder="Brief summary of the frontend project and key features"
               />
             </div>
           </div>

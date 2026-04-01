@@ -52,8 +52,8 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="/profile/shipon.pdf"
-                download="shipon.pdf"
+                href="/Shipon_Chowdhury.pdf"
+                download="Shipon_Chowdhury.pdf"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 ease-in-out transform hover:scale-105 font-medium group shadow-lg hover:shadow-xl font-body"
               >
                 Download CV

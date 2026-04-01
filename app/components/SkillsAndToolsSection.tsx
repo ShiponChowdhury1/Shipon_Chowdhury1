@@ -1,23 +1,28 @@
 'use client';
 
 export default function SkillsAndToolsSection() {
-  const designSkills = [
-    'UX Research',
-    'User Flow',
-    'Prototyping',
-    'Wireframes',
-    'Visual UI Design',
+  const frontendSkills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React.js',
+    'Next.js',
+    'Tailwind CSS',
     'Responsive Design',
-    'UX Writing',
-    'Dashboard Design',
+    'API Integration',
   ];
 
   const tools = [
-    'Figma',
-    'Adobe XD',
-    'Microsoft Word',
-    'Microsoft Excel',
-    'Photoshop',
+    'VS Code',
+    'Git',
+    'GitLab',
+    'Postman',
+    'Swagger',
+    'Hoppscotch',
+    'Chrome DevTools',
+    'Vercel',
+    "Render",
+    "Heroku",
+    'npm',
   ];
 
   return (
@@ -25,14 +30,14 @@ export default function SkillsAndToolsSection() {
       <div className="max-w-6xl mx-auto py-8">
         <h2 className="text-xl md:text-5xl font-bold text-foreground mb-4 font-heading text-center lg:text-left">Skills & Tools</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Design Skills */}
+          {/* Frontend Skills */}
           <div className="my-8">
     
             <h2 className="text-base lg:text-2xl md:text-[28px] font-bold text-foreground mb-8 font-heading">
-              Design Skills
+              Frontend Skills
             </h2>
             <div className="flex flex-wrap gap-3">
-              {designSkills.map((skill, index) => (
+              {frontendSkills.map((skill, index) => (
                 <span
                   key={index}
                   className="px-6 py-3 rounded-full font-medium text-base font-body transition-all duration-300 hover:scale-105"

@@ -2,15 +2,13 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, User } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
-import { useSession } from 'next-auth/react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { data: session, status } = useSession();
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -50,7 +48,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Side Actions */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center">
             {/* Theme Toggle */}
             {mounted && (
               <button
@@ -67,29 +65,6 @@ export default function Navbar() {
                   {theme === 'dark' ? 'Light' : 'Dark'}
                 </span>
               </button>
-            )}
-
-            {/* Authentication Button */}
-            {status === 'loading' ? (
-              <div className="flex items-center justify-center w-[120px] h-[52px] px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm ">
-                Loading...
-              </div>
-            ) : session ? (
-              <Link
-                href="/admin/dashboard"
-                className="flex items-center justify-center w-[120px] h-[52px] px-4 py-2 bg-[#7C4DFF] text-white rounded-lg hover:bg-[#7C4DFF]/90 transition-colors text-sm font-medium gap-2 font-body"
-              >
-                <User className="w-4 h-4" />
-                Dashboard
-              </Link>
-            ) : (
-              <Link
-                href="/admin/login"
-                className="flex items-center justify-center w-[120px] h-[52px] px-4 py-2 bg-[#7C4DFF] text-white rounded-lg hover:bg-[#7C4DFF]/90 transition-colors text-sm font-medium gap-2 font-body"
-              >
-              
-                SignUp
-              </Link>
             )}
           </div>
 
@@ -120,13 +95,13 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Mobile Actions - Theme Toggle and Authentication */}
-            <div className="flex gap-2 mx-4 mt-4">
+            {/* Mobile Actions */}
+            <div className="mx-4 mt-4">
               {/* Theme Toggle Mobile */}
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="flex-1 flex items-center justify-center h-12 px-3 py-3 bg-secondary/50 border border-[#7C4DFF] rounded-lg hover:bg-secondary hover:border-[#7C4DFF]/80 transition-all duration-200 text-sm font-medium text-foreground"
+                  className="w-full flex items-center justify-center h-12 px-3 py-3 bg-secondary/50 border border-[#7C4DFF] rounded-lg hover:bg-secondary hover:border-[#7C4DFF]/80 transition-all duration-200 text-sm font-medium text-foreground"
                 >
                   {theme === 'dark' ? (
                     <Sun className="w-4 h-4 text-yellow-500" />
@@ -137,31 +112,6 @@ export default function Navbar() {
                     {theme === 'dark' ? 'Light' : 'Dark'}
                   </span>
                 </button>
-              )}
-
-              {/* Mobile Authentication Button */}
-              {status === 'loading' ? (
-                <div className="flex-1 flex items-center justify-center h-12 px-3 py-3 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm font-medium font-body">
-                  Loading...
-                </div>
-              ) : session ? (
-                <Link
-                  href="/admin/dashboard"
-                  className="flex-1 flex items-center justify-center h-12 px-3 py-3 bg-[#7C4DFF] text-white rounded-lg hover:bg-[#7C4DFF]/90 transition-colors text-sm font-medium gap-2 font-body"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <User className="w-4 h-4" />
-                  Dashboard
-                </Link>
-              ) : (
-                <Link
-                  href="/admin/login"
-                  className="flex-1 flex items-center justify-center h-12 px-3 py-3 bg-[#7C4DFF] text-white rounded-lg hover:bg-[#7C4DFF]/90 transition-colors text-sm font-medium gap-2 font-body"
-                  onClick={() => setIsOpen(false)}
-                >
-            
-                  Admin Login
-                </Link>
               )}
             </div>
           </div>

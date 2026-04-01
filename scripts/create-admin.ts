@@ -12,9 +12,9 @@ async function seedAdmin() {
     console.log('Connected to MongoDB');
 
     // Admin credentials
-    const adminEmail = 'ahikahsan@gmail.com';
-    const adminPassword = 'Portfolio1818911#';
-    const adminName = 'Rahik Ahsan';
+    const adminEmail = 'oxshipon1@gmail.com';
+    const adminPassword = 'Shipon7878';
+    const adminName = 'Shipon Chowdhury';
 
     // Check if admin already exists
     const existingAdmin = await User.findOne({ email: adminEmail });
