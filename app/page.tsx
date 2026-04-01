@@ -24,10 +24,10 @@ export default async function Home() {
     <div className="bg-background text-foreground">
       <Navbar />
       <HeroSection />
+       <ProjectsSection projects={projects} />
       <AboutSection />
       <MyDesignProcess />
       <SkillsAndToolsSection />
-      <ProjectsSection projects={projects} />
       <ReviewsSection />
        <ServicesSection />
       <ContactSection />

@@ -10,6 +10,7 @@ interface ProjectCardProps extends Project {
   _id?: string;
   index?: number;
   large?: boolean;
+  scrollDirection?: 'down' | 'up';
 }
 
 export function ProjectCard({
@@ -21,7 +22,13 @@ export function ProjectCard({
   slug,
   index = 0,
   large = false,
+  scrollDirection = 'down',
 }: ProjectCardProps) {
+  const imageScrollClass =
+    scrollDirection === 'up'
+      ? 'object-bottom group-hover:object-top duration-2000'
+      : 'object-top group-hover:object-bottom duration-2000';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -51,7 +58,7 @@ export function ProjectCard({
           src={heroImage}
           alt={title}
           fill
-          className={`object-cover transition-all ease-linear ${large ? 'object-top duration-2000 group-hover:object-bottom' : 'duration-500'}`}
+          className={`object-cover transition-all ease-linear ${imageScrollClass}`}
         />
         <motion.div
           className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -135,9 +142,15 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 items-stretch">
-          {projects.slice(0, 3).map((project, index) => (
-            <ProjectCard key={project._id || project.slug} {...project} index={index} />
+        <div className="grid md:grid-cols-2 gap-8 mb-12 items-stretch">
+          {projects.slice(0, 2).map((project, index) => (
+            <ProjectCard
+              key={project._id || project.slug}
+              {...project}
+              index={index}
+              large
+              scrollDirection={index % 2 === 0 ? 'down' : 'up'}
+            />
           ))}
         </div>
 
