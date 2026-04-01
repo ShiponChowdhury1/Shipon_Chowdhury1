@@ -5,14 +5,14 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import { Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Linkedin, Twitter, Facebook, MessageCircle } from 'lucide-react';
 export default function ContactSection() {
 
   const socialLinks = [
     { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@rahikahsan.com', label: 'Email' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/shipon-chowdhury?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
+    { icon: MessageCircle, href: 'https://m.me/Oxshipon', label: 'Messenger' },
+    { icon: Mail, href: 'mailto:oxshipon1@gmail.com', label: 'Email' },
   ];
 
   useEffect(() => {
@@ -150,7 +150,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="lg:text-2xl text-base font-semibold text-gray-900 dark:text-white font-heading">Contact Information</h3>
+            <h3 className="lg:text-2xl text-base  text-gray-900 dark:text-white font-heading">Contact Information</h3>
             <p className='text-[#201d1d] dark:text-[#B2B2B2]'>Reach out through any of these channels. I typically <br /> respond within 24 hours.</p>
 
             {/* Email */}
@@ -184,7 +184,7 @@ export default function ContactSection() {
                   href="tel:+8801234567890"
                   className="text-[#7C4DFF] hover:text-[#7C4DFF]/80 transition-colors font-body"
                 >
-                 +8801889243696
+                 +8801703059461
                 </a>
               </div>
             </div>

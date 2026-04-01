@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { ThemeProvider } from './ThemeProvider';
 import LoadingScreen from './LoadingScreen';
+import WhatsAppButton from './WhatsAppButton';
 
 export default function ClientLayout({
   children,
@@ -41,16 +42,24 @@ export default function ClientLayout({
 
   // Skip loading screen for admin routes
   if (isAdmin) {
-    return <ThemeProvider>{children}</ThemeProvider>;
+    return (
+      <ThemeProvider>
+        <WhatsAppButton />
+        {children}
+      </ThemeProvider>
+    );
   }
 
   return (
     <ThemeProvider>
-      {mounted && isLoading ? (
-        <LoadingScreen onLoadingComplete={handleLoadingComplete} />
-      ) : (
-        children
-      )}
+      <div>
+        <WhatsAppButton />
+        {mounted && isLoading ? (
+          <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+        ) : (
+          children
+        )}
+      </div>
     </ThemeProvider>
   );
 }

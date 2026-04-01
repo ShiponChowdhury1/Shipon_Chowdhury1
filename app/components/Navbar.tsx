@@ -41,7 +41,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-800 uppercase dark:text-white hover:text-[#7C4DFF] transition-all duration-300 text-[16px] font-medium relative group font-body"
+                className="text-gray-800 dark:text-white hover:text-[#7C4DFF] transition-all duration-300 text-[16px] relative group "
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#7C4DFF] transition-all duration-300 group-hover:w-full"></span>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
             {/* Authentication Button */}
             {status === 'loading' ? (
-              <div className="flex items-center justify-center w-[120px] h-[52px] px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm font-medium font-body">
+              <div className="flex items-center justify-center w-[120px] h-[52px] px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm ">
                 Loading...
               </div>
             ) : session ? (
@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-2 text-gray-800 dark:text-white hover:text-[#7C4DFF] transition-colors text-base font-medium font-body"
+                className="block px-4 py-2 text-gray-800 dark:text-white hover:text-[#7C4DFF] transition-colors text-base"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}

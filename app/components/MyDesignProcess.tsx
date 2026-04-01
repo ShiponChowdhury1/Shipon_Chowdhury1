@@ -57,7 +57,6 @@ export default function MyDesignProcess() {
                   <span 
                     className="text-[#7C4DFF]"
                     style={{
-                      fontFamily: 'Manrope, sans-serif',
                       fontWeight: 600,
                       fontSize: '32px',
                       lineHeight: '140%',

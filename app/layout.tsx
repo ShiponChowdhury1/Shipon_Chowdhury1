@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Roboto, Playfair_Display } from "next/font/google";
+import { Montserrat, Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
 import { Providers } from "../components/providers";
@@ -12,10 +12,10 @@ const montserrat = Montserrat({
   weight: ["500", "700"],
 });
 
-const roboto = Roboto({
+const poppins = Poppins({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const playfair = Playfair_Display({
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${roboto.variable} ${playfair.variable} antialiased bg-background`}
+        className={`${montserrat.variable} ${poppins.variable} ${playfair.variable} antialiased bg-background`}
         suppressHydrationWarning={true}
       >
         <Providers>

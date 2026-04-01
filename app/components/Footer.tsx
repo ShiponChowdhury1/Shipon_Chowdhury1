@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Linkedin, Twitter, Mail , Facebook } from 'lucide-react';
+import { Linkedin, Twitter, Mail, Facebook, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,9 +15,9 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@rahikahsan.com', label: 'Email' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/shipon-chowdhury?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', label: 'LinkedIn' },
+    { icon: MessageCircle, href: 'https://m.me/Oxshipon', label: 'Messenger' },
+    { icon: Mail, href: 'mailto:oxshipon1@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -27,9 +27,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 font-accent">Rahik Ahsan</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 font-accent">Shipon Chowdhury</h3>
             <p className="text-gray-600 dark:text-neutral-400 text-sm font-body">
-              UX/UI Designer crafting intuitive experiences.
+              Frontend Developer crafting seamless digital experiences.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 dark:text-neutral-400 text-sm font-body">
-              © {currentYear} Rahik Ahsan. All rights reserved.
+              © {currentYear} Shipon Chowdhury. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-gray-600 dark:text-neutral-400 hover:text-gray-900 dark:hover:text-white transition-colors font-body">

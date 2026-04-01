@@ -217,7 +217,7 @@ section[id] {
 
 /* Font Family Classes */
 .font-heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
 }
 
 .font-body {
@@ -225,7 +225,7 @@ section[id] {
 }
 
 .font-accent {
-  font-family: var(--font-accent);
+  font-family: var(--font-body);
 }
 
 /* Apply fonts to common elements */
@@ -234,7 +234,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
 }
 
 /* Slick Slider Custom Styles */
