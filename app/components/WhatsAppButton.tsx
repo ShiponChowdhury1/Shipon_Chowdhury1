@@ -58,9 +58,9 @@ export default function WhatsAppButton() {
         <Image
           src="/whatsApp/whatsApp.png"
           alt="WhatsApp"
-          width={72}
-          height={72}
-          className="w-16 h-16"
+          width={64}
+          height={64}
+          className="w-14 h-14"
         />
       </motion.a>
 

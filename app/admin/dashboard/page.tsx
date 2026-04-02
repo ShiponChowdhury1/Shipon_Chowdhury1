@@ -10,6 +10,24 @@ import Link from 'next/link';
 import DeleteConfirmation from '../components/DeleteConfirmation';
 import AdminSidebar from '../../components/AdminSidebar';
 
+function getSafeImageSrc(src?: string) {
+  if (!src) return '/hero.png';
+
+  const trimmed = src.trim();
+  if (trimmed.startsWith('/')) return trimmed;
+
+  try {
+    const parsed = new URL(trimmed);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return trimmed;
+    }
+  } catch {
+    // Invalid URL, fallback to local image.
+  }
+
+  return '/hero.png';
+}
+
 export default function AdminDashboard() {
   const router = useRouter();
   const { data: session, status } = useSession();
@@ -256,7 +274,7 @@ export default function AdminDashboard() {
               {/* Project Image */}
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={project.heroImage}
+                  src={getSafeImageSrc(project.heroImage)}
                   alt={project.title}
                   fill
                   className="object-cover"

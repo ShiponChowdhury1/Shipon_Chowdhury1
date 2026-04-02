@@ -13,6 +13,24 @@ interface ProjectCardProps extends Project {
   scrollDirection?: 'down' | 'up';
 }
 
+function getSafeImageSrc(src?: string) {
+  if (!src) return '/hero.png';
+
+  const trimmed = src.trim();
+  if (trimmed.startsWith('/')) return trimmed;
+
+  try {
+    const parsed = new URL(trimmed);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return trimmed;
+    }
+  } catch {
+    // Ignore invalid URL and fallback to local placeholder.
+  }
+
+  return '/hero.png';
+}
+
 export function ProjectCard({
   _id,
   title,
@@ -28,6 +46,7 @@ export function ProjectCard({
     scrollDirection === 'up'
       ? 'object-bottom group-hover:object-top duration-2000'
       : 'object-top group-hover:object-bottom duration-2000';
+  const safeHeroImage = getSafeImageSrc(heroImage);
 
   return (
     <motion.div
@@ -55,7 +74,7 @@ export function ProjectCard({
         transition={{ duration: 0.4 }}
       >
         <Image
-          src={heroImage}
+          src={safeHeroImage}
           alt={title}
           fill
           className={`object-cover transition-all ease-linear ${imageScrollClass}`}

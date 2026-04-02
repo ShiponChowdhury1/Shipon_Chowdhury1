@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
-import { Montserrat, Poppins, Playfair_Display } from "next/font/google";
+import { Inter, Sora, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
 import { Providers } from "../components/providers";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const montserrat = Montserrat({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["500", "700"],
-});
-
-const poppins = Poppins({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+  preload: true,
 });
 
-const playfair = Playfair_Display({
+const sora = Sora({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500", "600", "700"],
+  preload: true,
+});
+
+const mono = IBM_Plex_Mono({
   variable: "--font-accent",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  display: "swap",
+  weight: ["400", "500"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${poppins.variable} ${playfair.variable} antialiased bg-background`}
+        className={`${inter.variable} ${sora.variable} ${mono.variable} antialiased bg-background`}
         suppressHydrationWarning={true}
       >
         <Providers>
